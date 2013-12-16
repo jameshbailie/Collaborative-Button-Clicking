@@ -1,0 +1,33 @@
+<head>
+  <title>my_cool_app</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  {{greeting}}
+  <br>
+  Input your name:
+  <input type="text" id="name" />
+  <br>
+  <input type="button" value="Click" class="click"/>
+  <br>
+  <div> {{> record}} </div>
+</template>
+
+<template name="record">
+  <div class="record">
+    {{#each clickers}}
+      {{> clicker}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="clicker">
+  <div class="clicker">
+    {{name}} has pressed the button.
+  </div>
+</template>
